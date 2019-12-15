@@ -1,0 +1,28 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FMularski/weather-app.git"
+  },
+  "keywords": [
+    "weather",
+    "app",
+    "project"
+  ],
+  "author": "Filip Mularski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FMularski/weather-app/issues"
+  },
+  "homepage": "https://github.com/FMularski/weather-app#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.0.6"
+  }
+}
