@@ -1,0 +1,14 @@
+const express = require('express')
+const app = express()
+const port = 5000
+
+app.set('view engine', 'hbs')
+app.listen(port, function (error) {
+    if (error)
+        console.log(error)
+})
+
+// GET /
+app.get('/', function (request, response) {
+    response.render('index')
+})
