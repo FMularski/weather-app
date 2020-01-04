@@ -1,4 +1,6 @@
 const express = require('express')
+const request = require('request')
+
 const app = express()
 const port = 5000
 
@@ -12,8 +14,18 @@ app.listen(port, function (error) {
         console.log(error)
 })
 
+const appid = require('./appid')
+var city = 'Elblag'
+var url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${appid}`
+
 // GET /
-app.get('/', function (request, response) {
+app.get('/', function (_request, response) {
+
+    request(url, function (error, response, body) {
+        weather_json = JSON.parse(body)
+        console.log(weather_json)
+    });
+
     response.render('index')
 })
 
