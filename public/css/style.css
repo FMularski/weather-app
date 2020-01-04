@@ -37,7 +37,7 @@ a:hover
     color: rgb(51, 67, 91);
 }
 
-p, #forecastfor
+p, #forecastfor, #form
 {
     text-align: justify;
     display: none;
