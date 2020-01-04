@@ -24,14 +24,45 @@ app.get('/', function (_request, response) {
 // POST /
 app.post('/', function (req, res) {
     var city = req.body.city
-    var url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${appid}`
+    var url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${appid}`
 
     request(url, function (error, response, body) {
         weather_json = JSON.parse(body)
         console.log(weather_json)
+
+        if (weather_json.cod == "200")   // city ok
+        {
+            var data = {
+                code: weather_json.cod,
+                city: weather_json.city.name,
+                country: weather_json.city.country,
+                list: weather_json.list,
+                msg: null,
+                valid_city: true
+            }
+        }
+        else if (weather_json.cod == "400") {   // user entered nothing
+            var data = {
+                msg: "Nothing to search.",
+                valid_city: false
+            }
+        }
+        else if (weather_json.cod == "404") {   // city not found
+            var data = {
+                msg: "Sorry, city not found :(",
+                valid_city: false
+            }
+        }
+        else {                                  // other error
+            var data = {
+                msg: weather_json.message,
+                valid_city: false
+            }
+        }
+
+        res.render('index', data)
     })
 
-    res.render('index', { city })
 })
 
 // GET /about

@@ -5,12 +5,14 @@ body
     background-color: rgb(251, 251, 251);
     font-family: 'Nunito';
     color: rgb(51, 67, 91);
+    min-height: 100%;
 }
 
 #container
 {
     width:60%;
     margin: auto;
+    min-height: 100%;
 }
 
 #logotext
@@ -46,12 +48,18 @@ p, #forecastfor, #form
 
 footer
 {
-    position: absolute;
     left: 20%;
-    bottom: 0;
+    bottom: 0%;
     right: 0;
     padding: 1rem;
     text-align: center;
     width: 60%;
     font-weight: 600;
+
+    position: fixed;
+
+    height: 5%;
+    color:rgb(251, 251, 251);
+    background: rgb(51, 67, 91);
+    border-radius: 25px;
 }
