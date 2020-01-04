@@ -3,6 +3,10 @@ const app = express()
 const port = 5000
 
 app.set('view engine', 'hbs')
+
+console.log(__dirname)
+app.use(express.static(__dirname + '/public'))
+
 app.listen(port, function (error) {
     if (error)
         console.log(error)

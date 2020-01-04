@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+body
+{
+    background-color: rgb(251, 251, 251);
+    font-family: 'Nunito';
+    color: rgb(51, 67, 91);
+}
+
+#container
+{
+    width:60%;
+    margin: auto;
+}
+
+#logotext
+{
+    font-size: xx-large;
+    font-weight: 800;
+}
+
+footer
+{
+    position: absolute;
+    left: 20%;
+    bottom: 0;
+    right: 0;
+    padding: 1rem;
+    text-align: center;
+    width: 60%;
+    font-weight: 600;
+}
