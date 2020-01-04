@@ -16,3 +16,7 @@ app.listen(port, function (error) {
 app.get('/', function (request, response) {
     response.render('index')
 })
+
+app.get('/about', function (request, response) {
+    response.render('about')
+})
