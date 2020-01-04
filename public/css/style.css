@@ -25,6 +25,12 @@ main
     font-weight: 600;
 }
 
+h3
+{
+    font-weight: 600;
+    margin-top: 2%;
+}
+
 a:hover
 {
     transform: scale3d(1.15, 1.15, 1.15);
@@ -34,7 +40,9 @@ a:hover
 p
 {
     text-align: justify;
+    display: none;
 }
+
 
 footer
 {

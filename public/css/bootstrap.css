@@ -4727,6 +4727,9 @@ input[type="button"].btn-block {
 }
 
 .card {
+  float: left;
+  margin-left: 2%;
+  margin-top: 2%;
   position: relative;
   display: -ms-flexbox;
   display: flex;
