@@ -37,7 +37,7 @@ a:hover
     color: rgb(51, 67, 91);
 }
 
-p
+p, #forecastfor
 {
     text-align: justify;
     display: none;

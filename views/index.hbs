@@ -33,33 +33,14 @@
         </nav>
 
         <main>
-            <form class="form-inline md-form form-sm mt-0">
+            <form class="form-inline md-form form-sm mt-0" method="POST">
                 <input class="form-control form-control-sm w-100" type="text" placeholder="Search city..."
-                    aria-label="Search">
+                    aria-label="Search" name="city">
             </form>
 
-            <h3>Forecast for Elblag</h3>
-
-
-            <div class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-
-
+            {{#if city}}
+            <h3 id="forecastfor">Forecast for {{city}}</h3>
+            {{/if}}
         </main>
 
         <footer>
@@ -82,6 +63,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/index.jquery.js"></script>
 </body>
 
 </html>
