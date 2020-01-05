@@ -4742,7 +4742,8 @@ input[type="button"].btn-block {
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+  border-radius: 10px;
+  display: none;
 }
 
 .card > hr {
@@ -4841,6 +4842,7 @@ input[type="button"].btn-block {
   flex-shrink: 0;
   width: 40%;
   margin: auto;
+  display: block;
 }
 
 .card-img,
