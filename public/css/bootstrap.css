@@ -4297,6 +4297,7 @@ input[type="button"].btn-block {
   font-weight: 600;
   color: #fff;
   background-color: rgb(51, 67, 91);
+  border-radius: 25px;
 }
 
 .nav-fill .nav-item {

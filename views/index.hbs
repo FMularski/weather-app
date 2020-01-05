@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
     <div id="container">
 
         <header>
@@ -44,9 +45,9 @@
             <h3 id="forecastfor">Forecast for {{city}}, {{country}}</h3>
             <h1>{{temp}}</h1>
 
-            {{#each list}}
+            {{#times count}}
             <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="" class="card-img-top" alt="">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -62,7 +63,7 @@
                     <a href="#" class="card-link">Another link</a>
                 </div>
             </div>
-            {{/each}}
+            {{/times}}
 
             {{/if}}
         </main>
@@ -72,6 +73,8 @@
         </footer>
 
     </div>
+
+
 
 
 
