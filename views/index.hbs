@@ -43,28 +43,70 @@
 
             {{#if valid_city}}
             <h3 id="forecastfor">Forecast for {{city}}, {{country}}</h3>
-            <h1>{{temp}}</h1>
 
-            {{#times count}}
             <div class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="">
+                <img src={{icon_list.[0]}} class="card-img-top" alt="">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+                    <h5 class="card-title">{{date_list.[0]}}</h5>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
+                    <li class="list-group-item">Weather: {{desc_list.[0]}}</li>
+                    <li class="list-group-item">Min. temperature: {{min_temp_list.[0]}}°C<br />Max.
+                        temperature.: {{max_temp_list.[0]}}°C<br />Feels like temperature: {{feel_temp_list.[0]}}°C</li>
+                    <li class="list-group-item">Pressure: {{pressure_list.[0]}} hPa</li>
+                    <li class="list-group-item">Humidity: {{hum_list.[0]}}%</li>
+                    <li class="list-group-item">Wind speed: {{wind_speed_list.[0]}} km/h<br />Wind
+                        degrees: {{wind_deg_list.[0]}}°</li>
                 </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
             </div>
-            {{/times}}
 
+            <div class="card" style="width: 18rem;">
+                <img src={{icon_list.[0]}} class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{date_list.[0]}}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Weather: {{desc_list.[0]}}</li>
+                    <li class="list-group-item">Min. temperature: {{min_temp_list.[0]}}°C<br />Max.
+                        temperature.: {{max_temp_list.[0]}}°C<br />Feels like temperature: {{feel_temp_list.[0]}}°C</li>
+                    <li class="list-group-item">Pressure: {{pressure_list.[0]}} hPa</li>
+                    <li class="list-group-item">Humidity: {{hum_list.[0]}}%</li>
+                    <li class="list-group-item">Wind speed: {{wind_speed_list.[0]}} km/h<br />Wind
+                        degrees: {{wind_deg_list.[0]}}°</li>
+                </ul>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src={{icon_list.[0]}} class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{date_list.[0]}}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Weather: {{desc_list.[0]}}</li>
+                    <li class="list-group-item">Min. temperature: {{min_temp_list.[0]}}°C<br />Max.
+                        temperature.: {{max_temp_list.[0]}}°C<br />Feels like temperature: {{feel_temp_list.[0]}}°C</li>
+                    <li class="list-group-item">Pressure: {{pressure_list.[0]}} hPa</li>
+                    <li class="list-group-item">Humidity: {{hum_list.[0]}}%</li>
+                    <li class="list-group-item">Wind speed: {{wind_speed_list.[0]}} km/h<br />Wind
+                        degrees: {{wind_deg_list.[0]}}°</li>
+                </ul>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src={{icon_list.[0]}} class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{date_list.[0]}}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Weather: {{desc_list.[0]}}</li>
+                    <li class="list-group-item">Min. temperature: {{min_temp_list.[0]}}°C<br />Max.
+                        temperature.: {{max_temp_list.[0]}}°C<br />Feels like temperature: {{feel_temp_list.[0]}}°C</li>
+                    <li class="list-group-item">Pressure: {{pressure_list.[0]}} hPa</li>
+                    <li class="list-group-item">Humidity: {{hum_list.[0]}}%</li>
+                    <li class="list-group-item">Wind speed: {{wind_speed_list.[0]}} km/h<br />Wind
+                        degrees: {{wind_deg_list.[0]}}°</li>
+                </ul>
+            </div>
             {{/if}}
         </main>
 

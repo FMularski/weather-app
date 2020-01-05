@@ -1,6 +1,5 @@
 const express = require('express')
 const request = require('request')
-const hbs = require('hbs')
 
 const app = express()
 const port = 5000
@@ -8,13 +7,6 @@ const port = 5000
 app.use(express.static(__dirname + '/public'))
 app.use(express.urlencoded({ extended: true }))     // to read user input from form
 app.set('view engine', 'hbs')
-
-hbs.registerHelper("times", function (n, block) {
-    var accum = '';
-    for (var i = 0; i < n; i++)
-        accum += block.fn(i);
-    return accum;
-})
 
 app.listen(port, function (error) {
     if (error)
@@ -34,16 +26,88 @@ app.post('/', function (req, res) {
 
     request(url, function (error, response, body) {
         weather_json = JSON.parse(body)
-        console.log(weather_json)
+        //console.log(weather_json)
 
         if (weather_json.cod == "200")   // city ok
         {
+            /* ICONS */
+            var icons_list = []
+            for (var i = 0; i < weather_json.cnt; i++) {
+                icons_list.push("https://openweathermap.org/img/w/" + weather_json.list[i].weather[0].icon + ".png")
+                console.log(icons_list[i])
+            }
+
+            /* DATES */
+            var dates_list = []
+            for (var i = 0; i < weather_json.cnt; i++) {
+                dates_list.push(weather_json.list[i].dt_txt)
+            }
+
+            /* DESCRIPTIONS */
+            var descs_list = []
+            for (var i = 0; i < weather_json.cnt; i++) {
+                descs_list.push(weather_json.list[i].weather[0].description)
+            }
+
+            /* MIN. TEMPERATURES */
+            var min_temps_list = []
+            for (var i = 0; i < weather_json.cnt; i++) {
+                min_temps_list.push(weather_json.list[i].main.temp_min)
+            }
+
+            /* MAX. TEMPERATURES */
+            var max_temps_list = []
+            for (var i = 0; i < weather_json.cnt; i++) {
+                max_temps_list.push(weather_json.list[i].main.temp_max)
+            }
+
+            /* FEEL TEMPERATURES */
+            var feel_temps_list = []
+            for (var i = 0; i < weather_json.cnt; i++) {
+                feel_temps_list.push(weather_json.list[i].main.temp)
+            }
+
+            /* PRESSURE */
+            var pressures_list = []
+            for (var i = 0; i < weather_json.cnt; i++) {
+                pressures_list.push(weather_json.list[i].main.pressure)
+            }
+
+            /* HUMIDITY */
+            var hums_list = []
+            for (var i = 0; i < weather_json.cnt; i++) {
+                hums_list.push(weather_json.list[i].main.humidity)
+            }
+
+            /* WIND SPEED */
+            var wind_speeds_list = []
+            for (var i = 0; i < weather_json.cnt; i++) {
+                wind_speeds_list.push(weather_json.list[i].wind.speed)
+            }
+
+            /* WIND DEGREES */
+            var wind_degrees_list = []
+            for (var i = 0; i < weather_json.cnt; i++) {
+                wind_degrees_list.push(weather_json.list[i].wind.deg)
+            }
+
+
             var data = {
-                count: weather_json.cnt,
-                code: weather_json.cod,
+                // simple
                 city: weather_json.city.name,
                 country: weather_json.city.country,
-                list: weather_json.list,
+                // lists 
+                icon_list: icons_list,
+                date_list: dates_list,
+                desc_list: descs_list,
+                min_temp_list: min_temps_list,
+                max_temp_list: max_temps_list,
+                feel_temp_list: feel_temps_list,
+                pressure_list: pressures_list,
+                hum_list: hums_list,
+                wind_speed_list: wind_speeds_list,
+                wind_deg_list: wind_degrees_list,
+                // for validation
                 msg: null,
                 valid_city: true
             }
