@@ -4,11 +4,11 @@ const request = require('request')
 const app = express()
 const port = 5000
 
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public'))      // set up directory for static files
 app.use(express.urlencoded({ extended: true }))     // to read user input from form
-app.set('view engine', 'hbs')
+app.set('view engine', 'hbs')                       // set hbs as view engine
 
-app.listen(port, function (error) {
+app.listen(port, function (error) {                 // here the app starts to work (listen requests)
     if (error)
         console.log(error)
 })
@@ -21,10 +21,10 @@ app.get('/', function (_request, response) {
 // POST /
 app.post('/', function (req, res) {
     const appid = require('./appid')
-    var city = req.body.city
+    var city = req.body.city            // read user city input
     var url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${appid}`
 
-    request(url, function (error, response, body) {
+    request(url, function (error, response, body) { // getting json data from API
         weather_json = JSON.parse(body)
 
         if (weather_json.cod == "200")   // city ok
