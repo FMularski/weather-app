@@ -26,7 +26,6 @@ app.post('/', function (req, res) {
 
     request(url, function (error, response, body) {
         weather_json = JSON.parse(body)
-        //console.log(weather_json)
 
         if (weather_json.cod == "200")   // city ok
         {
@@ -34,7 +33,6 @@ app.post('/', function (req, res) {
             var icons_list = []
             for (var i = 0; i < weather_json.cnt; i++) {
                 icons_list.push("https://openweathermap.org/img/w/" + weather_json.list[i].weather[0].icon + ".png")
-                console.log(icons_list[i])
             }
 
             /* DATES */
